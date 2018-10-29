@@ -47,7 +47,8 @@ func AesDecrypt(crypted, key []byte) ([]byte, error) {
 }
 
 func main() {
-	key := []byte("0123456789abcdef")
+	// we are using 32byte (AES-256) here
+	key := []byte("0123456789abcdef0123456789abcdef")
 	result, err := AesEncrypt([]byte("hello world"), key)
 	if err != nil {
 		panic(err)
